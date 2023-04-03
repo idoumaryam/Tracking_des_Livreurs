@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="494.0" prefWidth="576.0" style="-fx-padding: 15; -fx-background-color: #fafceb;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.fstt.trackingl.LigneController">
+	<children>
+		<Label prefHeight="45.0" prefWidth="154.0" text="Ligne Commande" textFill="#e17f10">
+			<font>
+				<Font name="System Bold" size="18.0" />
+			</font>
+		</Label>
+		<HBox prefHeight="34.0" prefWidth="580.0">
+			<children>
+				<Label prefHeight="17.0" prefWidth="146.0" text="Numéro Commande :" />
+            <ComboBox fx:id="cmboxCM" prefHeight="25.0" prefWidth="206.0" />
+			</children>
+		</HBox>
+		<HBox prefHeight="37.0" prefWidth="580.0">
+			<children>
+				<Label prefHeight="17.0" prefWidth="146.0" text="Numéro Produit :" />
+            <ComboBox fx:id="cmboxPR" prefHeight="25.0" prefWidth="205.0" />
+			</children>
+		</HBox>
+		<HBox prefHeight="38.0" prefWidth="580.0">
+			<children>
+				<Label prefHeight="17.0" prefWidth="148.0" text="Quantité :" />
+				<TextField fx:id="quant" prefHeight="25.0" prefWidth="203.0" />
+			</children>
+		</HBox>
+
+		<HBox prefHeight="39.0" prefWidth="565.0">
+			<HBox prefHeight="25.0" prefWidth="88.0">
+				<Button fx:id="ok" mnemonicParsing="false" onAction="#onSaveButtonClick" prefHeight="25.0" prefWidth="54.0" style="-fx-background-color: #db996c;" text="Save" />
+			</HBox>
+			<HBox prefHeight="25.0" prefWidth="88.0">
+				<Button fx:id="no" mnemonicParsing="false" onAction="#DeleteButtonAction" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #4ab8b8;" text="delete" />
+			</HBox>
+			<HBox prefHeight="39.0" prefWidth="197.0">
+				<Button fx:id="up" mnemonicParsing="false" onAction="#UpdateButtonAction" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #aedadd;" text="update" />
+			</HBox>
+			<HBox alignment="TOP_CENTER" prefHeight="39.0" prefWidth="89.0">
+				<children>
+					<Button fx:id="empty" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#empty" style="-fx-background-color: #efddb2;" text="Empty" />
+				</children>
+			</HBox>
+
+			<Button fx:id="btnreturn" mnemonicParsing="false" onAction="#handleButtonAction" style="-fx-background-color: #a7bcb9;" text="Return">
+				<font>
+					<Font name="System Bold" size="12.0" />
+				</font></Button>
+		</HBox>
+		<TableView fx:id="mytable" onMouseClicked="#onRowClick" prefHeight="240.0" prefWidth="520.0">
+			<columns>
+				<TableColumn fx:id="col_id" prefWidth="85.0" text="id Linge" />
+				<TableColumn fx:id="col_com" prefWidth="110.0" text="Num Commande" />
+				<TableColumn fx:id="col_pro" prefWidth="101.0" text="Num Produit " />
+				<TableColumn fx:id="col_quant" prefWidth="104.0" text="Quantité " />
+			</columns>
+		</TableView>
+	</children>
+</VBox>
